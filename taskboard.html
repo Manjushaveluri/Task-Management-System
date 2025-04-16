@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Board</title>
+  <script type="module" src="firebase-login.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 30px;
+      margin: 0;
+      background-color: #f7f9fc;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    h3, h4 {
+      color: #34495e;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="date"] {
+      width: 250px;
+    }
+
+    button {
+      background-color: #2d89ef;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1b5eb6;
+    }
+
+    .section {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    #taskStats {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      background-color: #ecf0f1;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .task-buttons button {
+      margin-left: 5px;
+      background-color: #7f8c8d;
+    }
+
+    .task-buttons button:hover {
+      background-color: #636e72;
+    }
+
+    #boardInfo {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Task Board</h2>
+  <p id="boardInfo"></p>
+
+  <div class="section">
+    <h3>Add User to Board</h3>
+    <input type="email" id="userEmail" placeholder="Enter user's email" />
+    <button id="addUserBtn">Add User</button>
+    <div id="addUserMsg"></div>
+  </div>
+
+  <div class="section">
+    <h3>Remove User</h3>
+    <input type="email" id="removeEmail" placeholder="Enter user's email" />
+    <button id="removeUserBtn">Remove User</button>
+    <div id="removeUserMsg"></div>
+  </div>
+
+  <div class="section">
+    <h3>Add Task</h3>
+    <input type="text" id="taskTitle" placeholder="Task Title" />
+    <input type="date" id="dueDate" />
+    <button id="addTaskBtn">Add Task</button>
+  </div>
+
+  <div class="section">
+    <h4>Task Stats:</h4>
+    <p id="taskStats"></p>
+
+    <h4>Tasks</h4>
+    <ul id="taskList"></ul>
+  </div>
+</body>
+</html>
