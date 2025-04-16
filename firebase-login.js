@@ -285,7 +285,7 @@ let active = 0;
           delBtn.textContent = "Delete";
           delBtn.style.marginLeft = "5px";
           delBtn.addEventListener("click", async () => {
-            const confirmDelete = confirm("Are you sure you want to delete this task?");
+            const confirmDelete = confirm("Are you sure you wanted to delete this task?");
             if (confirmDelete) {
               await updateDoc(doc(db, "taskboards", boardId, "tasks", taskId), {
                 deleted: true
